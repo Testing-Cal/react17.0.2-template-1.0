@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { render } from 'react-dom';
-import { HashRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from './home';
+import Dashboard from './dashboard-page';
+import Listing from './listing-page';
+import PageNotFound from './page-not-found';
 import './style.css';
-import Dashboard from "./dashboard";
-import Listing from "./listing";
 
 type AppState = {
     name: string
@@ -23,8 +24,9 @@ class App extends React.Component<AppProp,AppState> {
   }
 
   render() {
+    const basePath = process.env.REACT_APP_CONTEXT;
       return (
-          <Router>
+          <Router basename={basePath}>
               <div>
                   <nav style={{margin: '20px'}}>
                       <Link to="/" style={{marginRight: '20px'}}>Home</Link>
@@ -35,18 +37,11 @@ class App extends React.Component<AppProp,AppState> {
                       <Route path="/" element={<Home name={this.state.name}/>} />
                       <Route path="/dashboard" element={<Dashboard />} />
                       <Route path="/listing" element={<Listing />} />
+                      <Route path="*" element={<PageNotFound />} />
                   </Routes>
               </div>
           </Router>
       )
-    /*return (
-      <div>
-        <Home name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );*/
   }
 }
 
