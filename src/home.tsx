@@ -4,10 +4,6 @@ import HighchartsReact from 'highcharts-react-official';
 import highcharts3d from 'highcharts/highcharts-3d';
 highcharts3d(Highcharts);
 
-type HomeProp = {
-    name: string
-}
-
 const style = {fontWeight:'800', size: '48px'}
 const data = [{
   name:'Engagement Index',
@@ -27,7 +23,7 @@ color:'gray',
 data: [3,3,3.5,3.5,3.75,4]
 }]
 
-function Home(props:HomeProp) {
+function Home() {
   const [title,setTitle] = useState('Engagement dashboard')
   return (
     <div className="App">
