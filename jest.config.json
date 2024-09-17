@@ -2,7 +2,8 @@
  "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
  "transform": {
     "^.+\\.(js|jsx|ts|tsx)$": "ts-jest"
- },   
+ },
+ "testEnvironment": "jsdom",
  "testRegex": "/*.test.js$",
  "collectCoverage": true,
  "coverageReporters": ["lcov"],

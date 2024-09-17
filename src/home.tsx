@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import highcharts3d from 'highcharts/highcharts-3d';
-highcharts3d(Highcharts);
 
 const style = {fontWeight:'800', size: '48px'}
 const data = [{
